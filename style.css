@@ -1,0 +1,387 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-size: min(1.5vw, 20px);
+}
+
+body {
+    background-color: #ddc5a2;
+    color: #301B28;
+    font-family: "Source Sans Pro", sans-serif;
+}
+
+.innerbox
+{
+    width: 100%;
+    max-width:1500px;
+}
+
+.center {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+h2 {
+    color: #B6452C;
+    padding-top: 3.3rem;
+    padding-bottom: 0.8rem;
+    font-size: 2rem;
+}
+
+p {
+    font-size: 1rem;
+}
+
+h3 {
+    font-size: 1.8rem;
+}
+
+a, a:visited, a:hover, a:active {
+    color: inherit;
+    text-decoration: none;
+}
+
+.cont {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+}
+
+.hdr {
+    height: 5rem;
+    position: sticky;
+    top: 0;
+    z-index: 99;
+    margin: 0 auto;
+    overflow: unset;
+}
+
+.ftr {
+    display: flex;
+    background: #523634;
+    height: 10rem;
+    justify-content: space-around;
+    align-items: center;
+    color: #ddc5a2;
+    margin-top: 1.5rem;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    transition: .5s;
+    width: 100%;
+    max-width:1400px;
+    margin-left: inherit;
+    margin-right: inherit;
+    /*background-color: rgba(84, 216, 168, 0.4);*/
+    cursor: pointer;
+}
+
+.navbar-l {
+    width: 50%;
+    color: #301B28;
+    font-size: 1.3rem;
+    font-weight: bold;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    padding-left: 2.5rem;
+}
+
+.navbar-r {
+    width: 50%;
+    color: #301B28;
+    font-size: 1.2rem;
+    font-weight: 999;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding-right: 2.5rem;
+}
+
+.navbar-r div,.navbar-l div {
+    padding: 1rem;
+}
+
+.navbar-r div{
+    border-radius: 0.15rem;
+    transition: .5s;
+    display: unset;
+}
+
+.navbar-r div a {
+    display: unset;
+}
+
+.navbar-r div:hover{
+    background: #B6452C;
+    box-shadow: 0.2rem 0.2rem 0.1rem #523634;
+}
+
+.bigfoto {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.bigfoto img {
+    max-width: 100%;
+    object-fit: contain;
+    border-radius: 7%;
+    margin-right: 2rem;
+}
+
+.bigtext {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    font-size: 2rem;
+    padding-left: 2.5rem;
+    flex-direction: column;
+}
+
+.bigtext a {
+    align-self: flex-start;
+    margin-bottom: 0;
+}
+
+.btn{
+    border-radius: 0.15rem;
+    background: #B6452C;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    /*width: 100px;
+    height: 50px;*/
+    border: none;
+    transition: .5s;
+    align-self: flex-start;
+}
+
+.btn:hover {
+    box-shadow: 0.2rem 0.2rem 0.1rem #523634;
+}
+
+/* Style the button that is used to open and close the collapsible content */
+.collapsible {
+    background-color: #eee;
+    color: #301B28;
+    cursor: pointer;
+    padding: 0.9rem;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    margin-top: 0.25rem;
+    font-size: 1rem;
+    border-radius: 0.15rem;
+}
+
+/* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+.active, .collapsible:hover {
+    background-color: #B6452C;
+}
+
+/* Style the collapsible content. Note: hidden by default */
+.content {
+    font-size: 1rem;
+    padding: 0 0.9rem;
+    background-color: white;
+    color: #444;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    border-radius: 0px 0px 0.15rem 0.15rem;
+}
+
+.collapsible:after {
+    content: '\02795'; /* Unicode character for "plus" sign (+) */
+    font-size: 0.75rem;
+    color: #301B28;
+    float: right;
+    margin-left: 0.25rem;
+}
+
+.active:after {
+    content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.row {
+    /*
+    * .row — флекс-контейнер, этаж сетки.
+    */
+    display: flex;
+    /*
+    * Флекс-элементы будут раскладываться
+    * слева направо.
+    */
+    flex-direction: row;
+    /*
+    * Прижимаем флекс-элементы к левому краю.
+    */
+    justify-content: flex-start;
+    /*
+    * Если места для элементов не хватает,
+    * запрещаем их перенос на следующую строку.
+    */
+    flex-wrap: nowrap;
+}
+
+/*
+* Флекс-элементы на одну, две, три
+* и четыре колонки.
+*/
+.col-1,
+.col-2,
+.col-3,
+.col-4 {
+    /*
+    * flex-grow определяет насколько элемент
+    * будет больше своих соседей.
+    * Элемент с flex-grow: 1 займёт
+    * всю ширину контейнера,
+    * два элемента с flex-grow: 1 поделят
+    * контейнера пополам.
+    *
+    * flex-grow: 0 не даёт элементу
+    * растягиваться больше указанного размера.
+    */
+    flex-grow: 0;
+    /*
+    * flex-shrink определяет насколько сильно
+    * элемент будет уменьшатся, если
+    * во флекс-контейнере не хватит места.
+    */
+    flex-shrink: 0;
+
+    /*
+    * Задаём колонкам внутренние отступы
+    * по умолчанию.
+    */
+    box-sizing: border-box;
+    padding-right: 1rem;
+}
+
+.col-1 {
+    /*
+    * flex-basis задаёт начальный размер
+    * элемента до того, как он начнёт тянуться
+    * в соответствии с flex-grow.
+    */
+    flex-basis: 25%;
+    max-width: 25%;
+}
+
+.col-2 {
+    flex-basis: 50%;
+    max-width: 50%;
+}
+
+.col-3 {
+    flex-basis: 75%;
+    max-width: 75%;
+}
+
+.col-4 {
+    flex-basis: 100%;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    html {
+        font-size: min(1.3vw, 15px);
+    }
+
+    .cont {
+        margin-top: 2rem;
+        margin-left: 2rem;
+        margin-right: 2rem;
+    }
+
+    .hdr {
+        height: auto;
+        position: static;
+        display: inline;
+        top: 0;
+        width: 100%;
+    }
+
+    .navbar {
+        justify-content: flex-start;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .navbar-l {
+        width: 100%;
+        color: #ddc5a2;
+        background: #301B28;
+        font-size: 3.2rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .navbar-r {
+        width: 100%;
+        color: #ddc5a2;
+        background: #301B28;
+        font-size: 3rem;
+        font-weight: bold;
+        display: flex;
+        justify-content: flex-start;
+        flex-direction: column;
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    .navbar-r div {
+        width: 100%;
+    }
+
+    .row {
+        flex-direction: column;
+    }
+    .col-2 {
+        flex-basis: 100%;
+        max-width: 100%;
+    }
+
+    .bigtext {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        font-size: 2rem;
+        padding-left: 2.5rem;
+        flex-direction: column;
+    }
+
+    .bigtext a {
+        align-self: center;
+        margin-bottom: 1rem;
+    }
+
+    .bigfoto {
+        display: flex;
+        justify-content: center;
+    }
+
+    .collapsible {
+        font-size: 1.5rem;
+    }
+
+    p {
+        font-size: 1.45rem;
+    }
+}
+
+
+

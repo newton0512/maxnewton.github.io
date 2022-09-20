@@ -1,0 +1,20 @@
+
+/* Container for skill bars */
+.container-sk {
+    width: 100%; /* Full width */
+    background-color: #ddd; /* Grey background */
+}
+
+.skills {
+    text-align: right; /* Right-align text */
+    padding-top: 10px; /* Add top padding */
+    padding-bottom: 10px; /* Add bottom padding */
+    color: white; /* White text color */
+}
+
+.html {width: 90%; background-color: #04AA6D;}
+.css {width: 70%; background-color: #2196F3;}
+.js {width: 70%; background-color: #2196F3;}
+.python {width: 85%; background-color: #04AA6D;}
+.delphi {width: 80%; background-color: #2196F3;}
+.sql {width: 80%; background-color: #2196F3;}
